@@ -1,4 +1,5 @@
 <% if signed_in? %>
+  <div class="top-text-block3">
   <div class="row">
     <aside class="col-md-4">
       <section>
@@ -11,25 +12,32 @@
         <%= render 'shared/micropost_form' %>
       </section>
     </aside>
-  </div>
     <div class="col-md-8">
-      <h3>Micropost Feed</h3>
+      <h3>投稿一覧</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
-
+  <div class="center jumbotron top-text-block1">
+    <h1>Pictweet</h1>
     <h2>
-    This is the home page for the
-      <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
+     〜お気に入り絵本で繋がろう〜
     </h2>
+    <div class="btn-wrap" style="position:relative;display:inline-block;">
+     <%= image_tag("b-book.png", :class => "image-tag-test-class1") %>
+     <%= link_to "新規登録", new_user_registration_path,class: "btn btn-lg btn-primary bbtext" %>
+    </div>
 
-    <%= link_to "Sign up now!", new_user_registration_path,
-                                class: "btn btn-lg btn-primary" %>
+    <div class="btn-wrap" style="position:relative;display:inline-block;">
+     <%= image_tag("y-book.png", :class => "image-tag-test-class2") %>
+     <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-primary ybtext" %>
+    </div>
+    
   </div>
+  
+  
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <!--<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->
+  
+  
 <% end %>
